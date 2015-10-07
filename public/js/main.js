@@ -3,7 +3,7 @@ var CommentBox = React.createClass({
     return (
         <div className="commentBox">
           <h1>Comments</h1>
-          <CommentList />
+          <CommentList data={this.props.data} />
           <CommentForm />
         </div>
     );
@@ -49,7 +49,13 @@ var Comment = React.createClass({
   }
 });
 
+var data = [
+  {author: "Jameela Huq", text: "This is *LAAAAAAAME*"},
+  {author: "Nobody in Particular", text: "And this is no *comment* in particular"}
+];
+
+
 React.render(
-    React.createElement(CommentBox, null),
+  <CommentBox data={data} />,
     document.getElementById('content')
 );
